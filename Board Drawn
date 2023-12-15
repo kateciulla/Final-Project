@@ -1,0 +1,92 @@
+var redPaddleX;
+var redPaddleY;
+var score;
+frameRate(10);
+var m = millis();
+var currentScene = 0; //keeps track of the current Scene
+var puckX;
+var puckY;
+var puck;
+ 
+ currentScene = 2;
+   var draw= function() {
+       background(184, 217, 245);
+    fill(0,0,0);
+    textSize(12);
+    text("Let's Play!", 4, 20);
+    text("score: ", 4, 60);
+    text("Player 1: ",4, 80);
+    text("Player 2: ",4,100);
+    text("Time: ",4,40);
+    
+    fill(213, 184, 242); //edge game board
+    rect(105,12,289,376); //edge game board
+    fill(237, 204, 237); //big rect color
+    rect(115,20,270,360); //game board
+    
+    fill(255, 255, 255); //goal color
+    rect(210,20,75,10); //red goal
+    rect(210,370,75,10); //blue goal
+    
+    line(116,199,385,199); //center line
+    line(116,282,385,282); //blue side line
+    line(116,119,385,119); //red side line
+    noFill(); //center circle
+    ellipse(250,199,70,70); //center circle
+    ellipse(159,119,40,40); //red left circle
+    ellipse(339,119,40,40); //red right circle
+    ellipse(159,283,40,40); //blue left circle
+    ellipse(339,283,40,40); //blue right circle
+    
+    fill(199, 66, 66); //red paddle
+    //ellipse(250,58,25,25); //red paddle
+    ellipse(mouseX,mouseY,25,25); //red paddle
+    //ellipse(250,58,10,10); //small red paddle
+    ellipse(mouseX,mouseY,10,10); //small red paddle
+    fill(62, 85, 214); //blue paddle
+    ellipse(250,342,25,25); //blue paddle
+    ellipse(250,342,10,10); //small blue paddle
+    
+    fill(0, 0, 0); //puck
+    ellipse (250,200,12,12); //puck
+   
+    text("score: " + score ,10,10);
+   /*
+    text(round((millis()-m)/1000) + "seconds", 10,50);
+    if (score > 5){
+        speed = frameRate(1);
+    }
+    if(round((millis() - m)/1000) >= 60) {
+     currentScene = 0;
+    }
+    */
+    
+    var mouseClicked = function (){
+    if(currentScene === 0){
+        //btn1.handleMouseClick();
+    }
+
+        if (currentScene === 1 && mouseX > puckX && mouseX < puckX && mouseY > puckY && mouseY < puckY){
+             score ++;
+            text("score: " + score ,10,10);
+        }
+        if(currentScene === 1){
+            //btn2.handleMouseClick();
+        }
+    };
+};
+
+mouseClicked = function() {
+    //btn1.handleMouseClick();
+    //btn2.handleMouseClick();
+};
+
+   if(puckX > 285 && puckX < 210 && puckY > 30 && puckY < 20) {
+        score++;
+   } //blue scoring point on red
+   if(puckX > 285 && puckX < 210 && puckY > 380 && puckY < 370) {
+        score++;
+   } //red scoring point on blue
+   
+   // rect(210,20,75,10); //red goal
+   // rect(210,370,75,10); //blue goal
