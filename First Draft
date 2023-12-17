@@ -1,0 +1,253 @@
+var drawSarahBitmoji = function(myBitmoji) //code with shapes for the bitmoji
+{
+    var p = myBitmoji.h/100; 
+    
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*199, myBitmoji.y + p*144, p*47, p*-14, -29, 219); //middle section      hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    rect(myBitmoji.x + p*146, myBitmoji.y + p*221, p*107, p*60); //bottom hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    arc(myBitmoji.x + p*183, myBitmoji.y + p*216, p*77, p*153, 157, 300); //left hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    arc(myBitmoji.x + p*217, myBitmoji.y + p*209, p*74, p*140, 239, 378); //right hair
+
+    fill (255, 231, 207);//skin tone
+    stroke(186, 166, 149);
+    rect(myBitmoji.x + p*182, myBitmoji.y + p*198, p*38, p*76); //neck
+
+    fill (myBitmoji.shirtColor);//green shirt color
+    stroke(10, 26, 14);
+    rect(myBitmoji.x + p*137, myBitmoji.y + p*264, p*129, p*50, 25); //shirt
+
+    fill (255, 231, 207);//skin tone
+    stroke(10, 26, 14);
+    arc (myBitmoji.x + p*201, myBitmoji.y + p*264, p*44, p*23, 1, 180); //neck scoop
+    
+    fill (255, 231, 207);//skin tone
+    stroke(186, 166, 149);
+
+    arc(myBitmoji.x + p*238, myBitmoji.y + p*201, p*18, p*20, -110, 104);  //ear right
+    arc(myBitmoji.x + p*162, myBitmoji.y + p*201, p*18, p*20, 78, 277);  //ear left
+
+    ellipse (myBitmoji.x + p*200, myBitmoji.y + p*200, p*80, p*100); //head shape
+
+    fill (255, 255, 255);
+    strokeWeight(1.5);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*20, p*12); //white left eye
+
+    fill (255, 255, 255);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*20, p*12); //white right eye
+
+    noStroke();
+    fill (126, 184, 103);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*13, p*12); //green left eye
+
+    fill (126, 184, 103);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*13, p*12); //green right eye
+
+    fill (0, 0, 0);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*8, p*8); //left eye
+
+    fill (0, 0, 0);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*8, p*8); //right eye
+
+    fill (255, 231, 207); 
+    stroke(186, 166, 149);
+    strokeWeight(1);
+    arc(myBitmoji.x + p*199, myBitmoji.y + p*206, p*18, p*18, -88, 95); //nose
+
+    fill (255, 255, 255);
+    stroke(220, 141, 136);
+    strokeWeight(1.7);
+    arc(myBitmoji.x + p*201, myBitmoji.y + p*224, p*34, p*24, 1, 180); //mouth
+
+    line(myBitmoji.x + p*185, myBitmoji.y + p*224, myBitmoji.x + p*216, myBitmoji.y + p*224); //top line mouth
+
+    stroke(204, 196, 204);
+    strokeWeight(1);
+    line(myBitmoji.x + p*185, myBitmoji.y + p*229, myBitmoji.x + p*216, myBitmoji.y + p*229); //teeth line 
+
+    noStroke();
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*182, myBitmoji.y + p*179, p*20, p*-6, 4, 197); //left eyebrow
+
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*217, myBitmoji.y + p*179, p*20, p*-6, -12, 171); //right eyebrow
+
+    if(myBitmoji.initials === true)
+    {
+        stroke(255, 255, 255);
+        noFill();
+        strokeWeight(3);
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*301, p*10, p*14, -89, 180);//bottomS
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*286, p*10, p*14, 97, 370);//topS
+
+        stroke(255, 255, 255);
+        strokeWeight(3);
+        line(myBitmoji.x + p*208, myBitmoji.y + p*280, myBitmoji.x + p*208, myBitmoji.y + p         *307); //verticalL
+        line(myBitmoji.x + p*221, myBitmoji.y + p*307, myBitmoji.x + p*210, myBitmoji.y + p         *307); //horizontalL
+    }
+    else if(myBitmoji.initials === false)
+    {
+        noStroke();
+        noFill();
+        strokeWeight(3);
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*301, p*10, p*14, -89, 180);//bottomS
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*286, p*10, p*14, 97, 370);//topS
+
+        noStroke();
+        strokeWeight(3);
+        line(myBitmoji.x + p*208, myBitmoji.y + p*280, myBitmoji.x + p*208, myBitmoji.y + p         *307); //verticalL
+        line(myBitmoji.x + p*221, myBitmoji.y + p*307, myBitmoji.x + p*210, myBitmoji.y + p         *307); //horizontalL
+    }
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*187, myBitmoji.y + p*149, p*15, p*25); //leftside bow
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*213, myBitmoji.y + p*149, p*15, p*25); //rightside bow
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*200, myBitmoji.y + p*149, p*20, p*15); //middlesection bow
+};
+
+var drawKateBitmoji = function (xPos, yPos, bitmojiHeight){
+noStroke();
+fill(255, 224, 189); //skin tone
+ellipse(xPos-(bitmojiHeight/100*100),yPos+(bitmojiHeight/100*100),bitmojiHeight/100*83,bitmojiHeight/100*100); //head
+fill(139,69,19); // hair color
+quad(xPos-(bitmojiHeight/100*54),yPos+(bitmojiHeight/100*137),xPos-(bitmojiHeight/100*58),yPos+(bitmojiHeight/100*59),xPos-(bitmojiHeight/100*96),yPos+(bitmojiHeight/100*50),xPos-(bitmojiHeight/100*70),yPos+(bitmojiHeight/100*99)); //left hair
+quad(xPos-(bitmojiHeight/100*149),yPos+(bitmojiHeight/100*134),xPos-(bitmojiHeight/100*139),yPos+(bitmojiHeight/100*60),xPos-(bitmojiHeight/100*102),yPos+(bitmojiHeight/100*50),xPos-(bitmojiHeight/100*130),yPos+(bitmojiHeight/100*94)); // right hair
+ellipse(xPos-(bitmojiHeight/100*98),yPos+(bitmojiHeight/100*61),bitmojiHeight/100*81,bitmojiHeight/100*28); // top of head
+fill(119, 160, 219); //blue eyes
+ellipse(xPos-(bitmojiHeight/100*88),yPos+(bitmojiHeight/100*100),bitmojiHeight/100*6,bitmojiHeight/100*4); //left eye
+ellipse(xPos-(bitmojiHeight/100*117),yPos+(bitmojiHeight/100*100),bitmojiHeight/100*6,bitmojiHeight/100*4); //right eye
+fill(255, 224, 189);
+stroke(0, 0, 0);
+arc(xPos-(bitmojiHeight/100*88),yPos+(bitmojiHeight/100*102),bitmojiHeight/100*12,bitmojiHeight/100*11,185,356); //wink
+stroke(0, 0, 0);
+fill(255,224,189); //skin tone
+bezier(xPos-(bitmojiHeight/100*104),yPos+(bitmojiHeight/100*102),xPos+(bitmojiHeight/100*-77),yPos+(bitmojiHeight/100*114),xPos-(bitmojiHeight/100*95),yPos+(bitmojiHeight/100*115),xPos-(bitmojiHeight/100*103),yPos+(bitmojiHeight/100*115)); //nose
+fill(255, 255, 255); //white fill for mouth
+arc(xPos-(bitmojiHeight/100*103),yPos+(bitmojiHeight/100*125),bitmojiHeight/100*30,bitmojiHeight/100*13,bitmojiHeight/100*1,180); //mouth
+line(xPos-(bitmojiHeight/100*88),yPos+(bitmojiHeight/100*124),xPos-(bitmojiHeight/100*119),yPos+(bitmojiHeight/100*124)); //top of mouth
+fill(214, 133, 207); //shirt color
+rect(xPos-(bitmojiHeight/100*135),yPos+(bitmojiHeight/100*146),bitmojiHeight/100*72,bitmojiHeight/100*56,bitmojiHeight/100*15); //shirt
+fill(74, 21, 68); //bow fill
+triangle(xPos-(bitmojiHeight/100*102),yPos+(bitmojiHeight/100*70),xPos-(bitmojiHeight/100*118),yPos+(bitmojiHeight/100*64),xPos-(bitmojiHeight/100*104),yPos+(bitmojiHeight/100*48)); //left bow
+triangle(xPos-(bitmojiHeight/100*132),yPos+(bitmojiHeight/100*75),xPos-(bitmojiHeight/100*132),yPos+(bitmojiHeight/100*53),xPos-(bitmojiHeight/100*113),yPos+(bitmojiHeight/100*63)); //right bow
+line(xPos-(bitmojiHeight/100*101),yPos+(bitmojiHeight/100*186),xPos-(bitmojiHeight/100*101),yPos+(bitmojiHeight/100*164));//C
+line(xPos-(bitmojiHeight/100*86),yPos+(bitmojiHeight/100*163),xPos-(bitmojiHeight/100*101),yPos+(bitmojiHeight/100*163)); //C
+line(xPos-(bitmojiHeight/100*100),yPos+(bitmojiHeight/100*186),xPos-(bitmojiHeight/100*86),yPos+(bitmojiHeight/100*186));//C
+line(xPos-(bitmojiHeight/100*118),yPos+(bitmojiHeight/100*185),xPos-(bitmojiHeight/100*118),yPos+(bitmojiHeight/100*164));//K
+line(xPos-(bitmojiHeight/100*119),yPos+(bitmojiHeight/100*176),xPos-(bitmojiHeight/100*111),yPos+(bitmojiHeight/100*164));//K
+line(xPos-(bitmojiHeight/100*117),yPos+(bitmojiHeight/100*175),xPos-(bitmojiHeight/100*109),yPos+(bitmojiHeight/100*186));//K
+};
+
+
+var currentScene = 1; //keeps track of the current Scene
+
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+
+Button.prototype.draw = function() {
+    fill(0, 234, 255);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+10, this.y+this.height/4);
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+var drawGame = function() {
+    currentScene = 2;
+    background(184, 217, 245);
+    fill(0,0,0);
+    textSize(30);
+    text("Draft Game Screen", 50, 100);
+};
+
+var btn1 = new Button({
+    x: 123,
+    y: 315,
+    label: "Click to Play!",
+    onClick: function() {
+        drawGame();
+    }
+});
+
+
+var btn2 = new Button({
+    x: 100,
+    y: 213,
+    label: "No! Click ME!",
+    onClick: function() {
+        text("Yay, you picked me!", this.x, this.y+this.height);
+    }
+});
+
+
+mouseClicked = function() {
+    btn1.handleMouseClick();
+    btn2.handleMouseClick();
+};
+
+
+var drawSplash = function() {
+    currentScene = 1;
+    background(247, 185, 185);
+    fill(0,0,0);
+    textSize(50);
+    text("Air Hockey", 70, 20);
+    textSize(20);
+    text("By Kate Ciulla and Sarah Lustig", 70, 80);
+    textSize(12);
+    text("How to Play: Use your mouse to move the paddle.", 60, 130);
+    text("The goal is to hit the puck into your opponent's goal!", 60, 150);
+    text("You are on one side, and your opponent is on the other.", 60, 170);
+    drawSarahBitmoji({x:20, y:136, h:50, shirtColor:color(64, 102, 24), initials: true});
+    drawKateBitmoji(280,182,55);
+    btn1.draw();
+};
+
+draw = function() {
+    if (currentScene === 1) {
+        drawSplash();
+    }
+    else {
+        drawGame();
+    }
+};
