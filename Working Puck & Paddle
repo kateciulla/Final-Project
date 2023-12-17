@@ -1,0 +1,331 @@
+var drawSarahBitmoji = function(myBitmoji) 
+{
+    var p = myBitmoji.h/100; 
+    
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*199, myBitmoji.y + p*144, p*47, p*-14, -29, 219); //middle section      hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    rect(myBitmoji.x + p*146, myBitmoji.y + p*221, p*107, p*60); //bottom hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    arc(myBitmoji.x + p*183, myBitmoji.y + p*216, p*77, p*153, 157, 300); //left hair
+
+    fill(138, 106, 75); //hair color
+    stroke(82, 56, 35);
+    arc(myBitmoji.x + p*217, myBitmoji.y + p*209, p*74, p*140, 239, 378); //right hair
+
+    fill (255, 231, 207);//skin tone
+    stroke(186, 166, 149);
+    rect(myBitmoji.x + p*182, myBitmoji.y + p*198, p*38, p*76); //neck
+
+    fill (myBitmoji.shirtColor);//green shirt color
+    stroke(10, 26, 14);
+    rect(myBitmoji.x + p*137, myBitmoji.y + p*264, p*129, p*50, 25); //shirt
+
+    fill (255, 231, 207);//skin tone
+    stroke(10, 26, 14);
+    arc (myBitmoji.x + p*201, myBitmoji.y + p*264, p*44, p*23, 1, 180); //neck scoop
+    
+    fill (255, 231, 207);//skin tone
+    stroke(186, 166, 149);
+
+    arc(myBitmoji.x + p*238, myBitmoji.y + p*201, p*18, p*20, -110, 104);  //ear right
+    arc(myBitmoji.x + p*162, myBitmoji.y + p*201, p*18, p*20, 78, 277);  //ear left
+
+    ellipse (myBitmoji.x + p*200, myBitmoji.y + p*200, p*80, p*100); //head shape
+
+    fill (255, 255, 255);
+    strokeWeight(1.5);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*20, p*12); //white left eye
+
+    fill (255, 255, 255);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*20, p*12); //white right eye
+
+    noStroke();
+    fill (126, 184, 103);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*13, p*12); //green left eye
+
+    fill (126, 184, 103);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*13, p*12); //green right eye
+
+    fill (0, 0, 0);
+    ellipse (myBitmoji.x + p*183, myBitmoji.y + p*188, p*8, p*8); //left eye
+
+    fill (0, 0, 0);
+    ellipse (myBitmoji.x + p*216, myBitmoji.y + p*188, p*8, p*8); //right eye
+
+    fill (255, 231, 207); 
+    stroke(186, 166, 149);
+    strokeWeight(1);
+    arc(myBitmoji.x + p*199, myBitmoji.y + p*206, p*18, p*18, -88, 95); //nose
+
+    fill (255, 255, 255);
+    stroke(220, 141, 136);
+    strokeWeight(1.7);
+    arc(myBitmoji.x + p*201, myBitmoji.y + p*224, p*34, p*24, 1, 180); //mouth
+
+    line(myBitmoji.x + p*185, myBitmoji.y + p*224, myBitmoji.x + p*216, myBitmoji.y + p*224); //top line mouth
+
+    stroke(204, 196, 204);
+    strokeWeight(1);
+    line(myBitmoji.x + p*185, myBitmoji.y + p*229, myBitmoji.x + p*216, myBitmoji.y + p*229); //teeth line 
+
+    noStroke();
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*182, myBitmoji.y + p*179, p*20, p*-6, 4, 197); //left eyebrow
+
+    fill (138, 106, 75);
+    arc(myBitmoji.x + p*217, myBitmoji.y + p*179, p*20, p*-6, -12, 171); //right eyebrow
+
+    if(myBitmoji.initials === true)
+    {
+        stroke(255, 255, 255);
+        noFill();
+        strokeWeight(3);
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*301, p*10, p*14, -89, 180);//bottomS
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*286, p*10, p*14, 97, 370);//topS
+
+        stroke(255, 255, 255);
+        strokeWeight(3);
+        line(myBitmoji.x + p*208, myBitmoji.y + p*280, myBitmoji.x + p*208, myBitmoji.y + p         *307); //verticalL
+        line(myBitmoji.x + p*221, myBitmoji.y + p*307, myBitmoji.x + p*210, myBitmoji.y + p         *307); //horizontalL
+    }
+    else if(myBitmoji.initials === false)
+    {
+        noStroke();
+        noFill();
+        strokeWeight(3);
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*301, p*10, p*14, -89, 180);//bottomS
+        arc(myBitmoji.x + p*189, myBitmoji.y + p*286, p*10, p*14, 97, 370);//topS
+
+        noStroke();
+        strokeWeight(3);
+        line(myBitmoji.x + p*208, myBitmoji.y + p*280, myBitmoji.x + p*208, myBitmoji.y + p         *307); //verticalL
+        line(myBitmoji.x + p*221, myBitmoji.y + p*307, myBitmoji.x + p*210, myBitmoji.y + p         *307); //horizontalL
+    }
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*187, myBitmoji.y + p*149, p*15, p*25); //leftside bow
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*213, myBitmoji.y + p*149, p*15, p*25); //rightside bow
+
+    stroke(125, 14, 79);
+    strokeWeight(1);
+    fill(235, 33, 148);
+    ellipse(myBitmoji.x + p*200, myBitmoji.y + p*149, p*20, p*15); //middlesection bow
+}; //code with shapes for Sarah's bitmoji
+
+var drawKateBitmoji = function (xPos, yPos, bitmojiHeight)
+{
+    var h = bitmojiHeight/100;
+    
+    noStroke();
+    fill(255, 224, 189); //skin tone
+    ellipse(xPos - (h*100), yPos + (h*100), h*83, h*100); //head
+    fill(139, 69, 19); // hair color
+    quad(xPos - (h*54), yPos + (h*137), xPos - (h*58), yPos + (h*59), xPos - (h*96), yPos + (h*50), xPos - (h*70), yPos + (h*99)); //left hair
+    quad(xPos - (h*149), yPos + (h*134), xPos - (h*139), yPos + (h*60), xPos - (h*102), yPos + (h*50), xPos - (h*130), yPos + (h*94)); // right hair
+    ellipse(xPos - (h*98), yPos + (h*61), h*81, h*28); // top of head
+    fill(119, 160, 219); //blue eyes
+    ellipse(xPos - (h*88), yPos + (h*100), h*6, h*4); //left eye
+    ellipse(xPos - (h*117), yPos + (h*100), h*6, h*4); //right eye
+    fill(255, 224, 189);
+    stroke(0, 0, 0);
+    arc(xPos - (h*88), yPos + (h*102), h*12, h*11, 185, 356); //wink
+    stroke(0, 0, 0);
+    fill(255, 224, 189); //skin tone
+    bezier(xPos - (h*104), yPos + (h*102), xPos + (h*-77), yPos + (h*114), xPos - (h*95), yPos + (h*115), xPos - (h*103), yPos + (h*115)); //nose
+    fill(255, 255, 255); //white fill for mouth
+    arc(xPos - (h*103), yPos + (h*125), h*30, h*13, h*1, 180); //mouth
+    line(xPos - (h*88), yPos + (h*124), xPos - (h*119), yPos + (h*124)); //top of mouth
+    fill(214, 133, 207); //shirt color
+    rect(xPos - (h*135), yPos + (h*146), h*72, h*56, h*15); //shirt
+    fill(74, 21, 68); //bow fill
+    triangle(xPos - (h*102), yPos + (h*70), xPos - (h*118), yPos + (h*64), xPos - (h*104), yPos + (h*48)); //left bow
+    triangle(xPos - (h*132), yPos + (h*75), xPos - (h*132), yPos + (h*53), xPos - (h*113), yPos + (h*63)); //right bow
+    line(xPos - (h*101), yPos + (h*186), xPos - (h*101), yPos + (h*164)); //C
+    line(xPos - (h*86), yPos + (h*163), xPos - (h*101), yPos + (h*163)); //C
+    line(xPos - (h*100), yPos + (h*186), xPos - (h*86), yPos + (h*186)); //C
+    line(xPos - (h*118), yPos + (h*185), xPos - (h*118), yPos + (h*164)); //K
+    line(xPos - (h*119), yPos + (h*176), xPos - (h*111), yPos + (h*164)); //K
+    line(xPos - (h*117), yPos + (h*175), xPos - (h*109), yPos + (h*186)); //K
+}; //code for Kate's bitmoji
+
+
+var currentScene = 1; //keeps track of the current Scene
+
+//khan button class
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+
+Button.prototype.draw = function() {
+    fill(0, 234, 255);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+10, this.y+this.height/4);
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+var puck = {
+    x: 250,
+    y: 200,
+    diameter: 12,
+    speedX: 3,
+    speedY: 3
+}; //object class for puck
+
+var compPaddleX = 250; //x position of blue paddle (computer)
+var compPaddleSpeed = 3; //blue paddle speed (computer)
+
+var gameScreenDesign = function () {
+    background(184, 217, 245);
+    fill(0, 0, 0);
+    textSize(12);
+    text("Your Score: ", 4, 80);
+    text("Computer: ", 4, 100);
+
+    fill(213, 184, 242); //edge game board
+    rect(105, 12, 289, 376); //edge game board
+    fill(237, 204, 237); //big rect color
+    rect(115, 20, 270, 360); //game board
+    
+    fill(255, 255, 255); //goal color
+    rect(200, 20, 100, 10); //red goal
+    rect(200, 370, 100, 10); //blue goal
+    
+    line(116, 199, 385, 199); //center line
+    line(116, 282, 385, 282); //blue side line
+    line(116, 119, 385, 119); //red side line
+    noFill(); //center circle
+    ellipse(250, 199, 70, 70); //center circle
+    ellipse(159, 119, 40, 40); //red left circle
+    ellipse(339, 119, 40, 40); //red right circle
+    ellipse(159, 283, 40, 40); //blue left circle
+    ellipse(339, 283, 40, 40); //blue right circle
+}; //draws game board
+
+var drawGame = function() {
+    currentScene = 2;
+    gameScreenDesign();
+
+    fill(199, 66, 66); //red paddle
+    ellipse(mouseX, mouseY, 25, 25); //red paddle
+    ellipse(mouseX, mouseY, 10, 10); //small red paddle
+        
+    fill(62, 85, 214); //blue paddle
+    ellipse(compPaddleX, 342, 25, 25); //blue paddle
+    ellipse(compPaddleX, 342, 10, 10); //small blue paddle
+    
+    //moves computer paddle left to right
+    compPaddleX += compPaddleSpeed; 
+    if (compPaddleX > 375 || compPaddleX < 125) {
+        compPaddleSpeed = compPaddleSpeed * -1;
+    }
+
+    fill(0, 0, 0); //puck color
+    ellipse(puck.x, puck.y, puck.diameter, puck.diameter); // puck
+
+    //Move puck according to puck speed
+    puck.x += puck.speedX;
+    puck.y += puck.speedY;
+
+    //Bounces puck off walls (x)
+    if (puck.x > 385 || puck.x < 115) {
+        puck.speedX = puck.speedX * -1;
+    }
+   
+   //Bounces puck off walls (y)
+    if (puck.y > 370 || puck.y < 20) {
+        puck.speedY = puck.speedY * -1;
+    }
+    
+    if (dist(puck.x, puck.y, mouseX, mouseY) < 20) {
+        puck.speedX = random(1, 3); 
+        puck.speedY = random(1, 3);
+    } //if puck collides with red paddle it moves
+
+    if (dist(puck.x, puck.y, compPaddleX, 342) < 20) {
+        puck.speedX = random(1, 3); 
+        puck.speedY = random(1, 3);
+    }//if puck collides with blue paddle it moves
+};
+
+var btn1 = new Button({
+    x: 123,
+    y: 315,
+    label: "Click to Play!",
+    onClick: function() {
+        drawGame();
+    }
+});
+
+var btn2 = new Button({
+    x: 100,
+    y: 213,
+    label: "No! Click ME!",
+    onClick: function() {
+        text("Yay, you picked me!", this.x, this.y+this.height);
+    }
+});
+
+mouseClicked = function() {
+    btn1.handleMouseClick();
+    btn2.handleMouseClick();
+};
+
+var drawSplash = function() {
+    currentScene = 1;
+    background(247, 185, 185);
+    fill(0,0,0);
+    textSize(50);
+    text("Air Hockey", 70, 20);
+    textSize(20);
+    text("By Kate Ciulla and Sarah Lustig", 70, 80);
+    textSize(12);
+    text("How to Play: Use your mouse to move the red paddle.", 60, 130);
+    text("The goal is to hit the puck into your opponent's goal.", 60, 150);
+    text("If you score, you earn a point. Get 10 points to win!", 60, 170);
+    drawSarahBitmoji({x:20, y:136, h:50, shirtColor:color(64, 102, 24), initials: true});
+    drawKateBitmoji(280,182,55);
+    btn1.draw();
+};
+
+draw = function() {
+    if (currentScene === 1) {
+        drawSplash();
+    }
+    else {
+        drawGame();
+    }
+};
+
